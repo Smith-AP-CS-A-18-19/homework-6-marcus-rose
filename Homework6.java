@@ -3,21 +3,41 @@ public class Homework6 {
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
+	 private String s;
+	 private int a;
+	 private int b;
+	 private int c;
+
 	public Homework6(String s, int a, int b, int c) {
+		this.s = s;
+		this.a = a;
+		this.b = b;
+		this.c = c;
 
 	}
 
 	/* Return true if the stored String comes before the provided
 	 * String lexicographically, return false if it does not
 	 */
-	public boolen isBefore(String other) {
-
+	public boolean isBefore(String other) {
+		if (s.compareTo(other) == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/* Return the maximum of the stored integers
 	 */
 	public int max() {
-
+		if (b > c && b > a) {
+			return b;
+		} if (c > a && c > b){
+			return c;
+		} else {
+			return a;
+			
+		}
 	}
 
 	/* Return the middle value of the stored integers. If two numbers
@@ -26,7 +46,19 @@ public class Homework6 {
 	 * to receive full credit
 	 */
 	public int mid() {
-
+		if (max() == a && b > c) {
+			return b;
+		} else if (max() == c && b > a) {
+			return b;
+		} else if (max() == b && c > a) {
+			return c;
+		} else if (max() == a && c > b) {
+			return c;
+		} else if (a == b && c > a) {
+			return c;
+		} else {
+			return a;
+		}
 	}
 
 	/* Return true if the stored numbers were provided in ascending
@@ -36,7 +68,14 @@ public class Homework6 {
 	 */
 	public boolean isAscending() {
 
+		if (!(c > b && b > a)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
+
 
 	public static void main(String[] args) {
 		int exitCode = 0;
@@ -87,5 +126,5 @@ public class Homework6 {
 
 		System.exit(exitCode);
 	}
-	
+
 }
